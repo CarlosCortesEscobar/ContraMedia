@@ -18,12 +18,30 @@ body {
     font-family: Akira;
 }
 
-.wrapper {
+#loaded-wrapper, #loading-wrapper {
     height: 100%;
     width: 100%;
     display: flex;
     flex-flow: row nowrap;
     overflow: auto;
+}
+
+#loading-wrapper {
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    animation: 1s linear infinite Spin;
+}
+
+@keyframes Spin {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 360deg;
+    }
 }
 
 .left {
