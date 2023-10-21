@@ -9,6 +9,9 @@
     src: url('./assets/fonts/ZonaPro-Regular.otf');
     font-display: swap;
 }
+:root {
+    --srvc-val: 60%;
+}
 
 body {
     background-color: #15191A;
@@ -155,7 +158,7 @@ body {
 }
 
 .service {
-    height: 60%;
+    height: val(--srvc-val);
     object-fit: fill;
 }
 
@@ -292,5 +295,33 @@ select option[value=""] {
     }
     to {
         transform: translateY(0%);
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .service {
+        height: 50%;
+        object-fit: fill;
+    }
+    .david-container {
+        width: 200%;
+    }
+    #loaded-wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+    .commission {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+    .label {
+        margin-bottom: 0.5rem;
+    }
+    .req-service {
+        text-align: center;
     }
 }
