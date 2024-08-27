@@ -9,9 +9,6 @@
     src: url('./assets/fonts/ZonaPro-Regular.otf');
     font-display: swap;
 }
-:root {
-    --srvc-val: 60%;
-}
 
 body {
     background-color: #15191A;
@@ -21,7 +18,7 @@ body {
     font-family: Akira;
 }
 
-#loaded-wrapper, #loading-wrapper {
+.loading {
     height: 100%;
     width: 100%;
     display: flex;
@@ -29,7 +26,7 @@ body {
     overflow: auto;
 }
 
-#loading-wrapper {
+.loading {
     justify-content: center;
     align-items: center;
 }
@@ -47,281 +44,37 @@ body {
     }
 }
 
-.left {
-    height: 100%;
-    width: 50%;
+
+.loaded {
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.david-container {
-    position: fixed;
-    top: 0%;
-    z-index: -1;
-    height: 100%;
     width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.david-container > .david {
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0px 0px 5px white);
-}
-
-.left-text {
-    font-family: 'Akira';
-    width: 100%;
-    margin-left: 10%;
-}
-
-.header {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-}
-
-.cursor-prompt, .cursor, .contra {
-    font-size: 4rem;
-    color: #FFFFFF;
-    text-shadow: 0 0 3rem rgba(255,255,255,0.50);
-}
-
-.contra {
-    margin-left: 1rem;
-}
-
-.cursor {
-    margin-left: 0.5rem;
-    animation: blink 0.95s infinite;
-}
-
-.commission {
-    padding-top: 22%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    margin-bottom: 5%;
-}
-
-.commission > .o-status {
-    color: lime;
-}
-
-.commission > .c-status {
-    color: red;
-}
-
-.commission > .label, .service-anchor {
-    font-size: 1.2rem;
-    color: #A7A7A7;
-}
-
-.service-anchor {
-    text-decoration: underline;
-}
-
-.service-anchor:hover {
-    cursor: pointer;
-}
-
-.right {
     height: 100%;
-    width: 50%;
+    background-image: url('./assets/images/david.png');
+    background-size: cover;
+    background-position: center;
+    filter: drop-shadow(0px 0px 5px #FFF);
+}
+
+.type-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow: column wrap;
+    margin: 2rem;
 }
 
-.services-label {
-    font-size: 3.5rem;
-    margin-bottom: 5%;
-    color: #FFFFFF;
-    letter-spacing: -0.19px;
-    text-shadow: 0 0 3rem rgba(255,255,255,0.50);
-}
-
-.available-services {
-    height: 10%;
-    width: 90%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-around;
-    align-items: end;
-}
-
-.service {
-    height: val(--srvc-val);
-    object-fit: fill;
-}
-
-.selected {
-    filter: drop-shadow(0px 0px 15px white);
-}
-
-.service-info {
-    margin-top: 5%;
-    width: 80%;
-    height: 45%;
-    background-color: rgba(0,0,0, 0.5);
-    border: 2px solid #FFFFFF;
-    border-radius: 8px;
-    box-shadow: 0 0 9px 5px rgba(255,255,255,0.50);
-    font-family: 'Zona';
-    overflow: scroll;
-}
-
-.service-info > .service-type {
-    color: #FFFFFF;    
-    font-size: 1.5rem;
-    text-align: center;
-    margin-top: 2%;
-}
-
-.service-info > .info-text {
-    color: #FFFFFF;
-    font-size: 1.2rem;
-    width: 90%;
-    height: 80%;
-    margin: 5%;
-}
-
-.service-portfolio {
-    margin-top: 5%;
-    font-size: 1.5rem;
-    color: lime;
-}
-
-.footer {
-    color: #A7A7A7;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    bottom: 3%;
-}
-
-#srvc {
-    background-color: rgba(0,0,0, 0.9);
-    height: 80%;
-    width: 50%;
-    border-radius: 10px;
-}
-
-#srvc::backdrop {
-    background-color: rgba(0, 0, 0, 0.75);
-}
-
-#srvc[open] {
+.wrapper {
     display: flex;
     flex-flow: column wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    animation: open-dialog 0.5s linear normal;
+    color: #FFF;
+    filter: none;
+    margin-top: 15%;
 }
 
-.srvc-header {
-    color: #FFFFFF;
-    font-size: 1.5rem;
+.hire-me {
     position: absolute;
-    top: 5%;
-}
+    top: 50%;
 
-.srvc-form {
-    width: 80%;
-}
-
-input, #srvc-type {
-    font-family: 'Zona';
-}
-
-.input {
-    background: #FFFFFF;
-    border: 1px solid #979797;
-    border-radius: 10px;
-    width: 35%;
-    height: 2.5rem;
-    font-size: 1.2rem;
-}
-
-.name-email, .comp-phone {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    margin-bottom: 2.5%;
-}
-
-.srvc-select {
-    display: flex;
-    justify-content: center;
-    height: 2.5rem;
-}
-
-#srvc-type {
-    height: 100%;
-    width: 50%;
-    border: none;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-select:invalid,
-select option[value=""] {
-    color: #979797;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes open-dialog {
-    from {
-        transform: translateY(-110%);
-    }
-    to {
-        transform: translateY(0%);
-    }
-}
-
-
-@media (max-width: 1200px) {
-    .service {
-        height: 50%;
-        object-fit: fill;
-    }
-    .david-container {
-        width: 200%;
-    }
-    #loaded-wrapper {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-    }
-    .commission {
-        display: flex;
-        flex-flow: column nowrap;
-    }
-    .label {
-        margin-bottom: 0.5rem;
-    }
-    .req-service {
-        text-align: center;
-    }
 }
