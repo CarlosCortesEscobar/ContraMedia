@@ -89,3 +89,12 @@ body {
         right: -100vw;
     }
 }
+
+#code {
+    z-index: 0;
+    opacity: 0.10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* filter: hue-rotate(180deg); */
+}
