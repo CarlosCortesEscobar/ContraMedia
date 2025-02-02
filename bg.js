@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let deg = 0;
     setInterval(() => {
         bg.style.filter = `hue-rotate(${deg}deg)`
-        if (deg <= 359) {
+        if (deg <= 150) {
             deg += 1;
             console.log(`hue-rotate(${deg}deg)`);
             
